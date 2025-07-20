@@ -11,7 +11,8 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('pan_analytics', function (Blueprint $table): void {
+        Schema::create('pan_analytics', function (Blueprint $table): void
+        {
             $table->id();
             $table->string('name');
 

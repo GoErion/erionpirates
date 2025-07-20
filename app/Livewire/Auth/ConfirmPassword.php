@@ -14,6 +14,7 @@ class ConfirmPassword extends Component
 
     /**
      * Confirm the current user's password.
+     * @throws ValidationException
      */
     public function confirmPassword(): void
     {
@@ -24,7 +25,8 @@ class ConfirmPassword extends Component
         if (! Auth::guard('web')->validate([
             'email' => Auth::user()->email,
             'password' => $this->password,
-        ])) {
+        ]))
+        {
             throw ValidationException::withMessages([
                 'password' => __('auth.password'),
             ]);
