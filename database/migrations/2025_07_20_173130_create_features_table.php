@@ -18,8 +18,6 @@ return new class extends PennantMigration
             $table->string('scope');
             $table->text('value');
             $table->timestamps();
-            //testing
-
             $table->unique(['name', 'scope']);
         });
     }
