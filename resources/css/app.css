@@ -1,5 +1,7 @@
 @import 'tailwindcss';
 @import '../../vendor/livewire/flux/dist/flux.css';
+@import 'highlight.js/styles/tomorrow-night-blue.css';
+
 
 @source '../views';
 @source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
@@ -64,3 +66,55 @@ select:focus[data-flux-control] {
 /* \[:where(&)\]:size-4 {
     @apply size-4;
 } */
+
+[x-cloak] {
+    display: none;
+}
+
+:not(.answer)>pre {
+    padding-left: 1rem;
+    padding-right: 1rem;
+}
+
+.hover\:darken-gradient:hover {
+    filter: saturate(2.5);
+}
+
+/** See /resources/js/particles-effect.js */
+particleEffect {
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    border-radius: 50%;
+}
+
+::-webkit-scrollbar {
+    height: 5px;
+    width: 5px
+}
+
+::-webkit-scrollbar-track {
+    @apply bg-gray-900;
+}
+
+::-webkit-scrollbar-thumb {
+    @apply bg-gray-700;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #c9cbcd
+}
+
+.dark ::-webkit-scrollbar-track {
+    @apply bg-gray-800;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    @apply bg-gray-600;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    @apply bg-gray-600;
+}
