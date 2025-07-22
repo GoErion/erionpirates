@@ -4,8 +4,17 @@
     <inspection_tool class="HtmlUnknownAttribute" enabled="true" level="WARNING" enabled_by_default="true">
       <option name="myValues">
         <value>
-          <list size="1">
+          <list size="10">
             <item index="0" class="java.lang.String" itemvalue="href" />
+            <item index="1" class="java.lang.String" itemvalue="wire:navigate" />
+            <item index="2" class="java.lang.String" itemvalue="wire:transition" />
+            <item index="3" class="java.lang.String" itemvalue="wire:key" />
+            <item index="4" class="java.lang.String" itemvalue="x-intersect.margin.50%" />
+            <item index="5" class="java.lang.String" itemvalue="wire:loading" />
+            <item index="6" class="java.lang.String" itemvalue="wire:target" />
+            <item index="7" class="java.lang.String" itemvalue="x-intersect.once.full" />
+            <item index="8" class="java.lang.String" itemvalue="x-data" />
+            <item index="9" class="java.lang.String" itemvalue="x-on:click" />
           </list>
         </value>
       </option>

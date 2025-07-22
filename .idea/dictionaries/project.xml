@@ -4,6 +4,7 @@
       <w>fpvcplwu</w>
       <w>livewire</w>
       <w>nocase</w>
+      <w>phpstan</w>
     </words>
   </dictionary>
 </component>
