@@ -37,7 +37,7 @@ return new class extends Migration
 
             $table->text('content');
             $table->text('answer')->nullable();
-            $table->timestamp('answered_created_at')->nullable();
+            $table->timestamp('answer_created_at')->nullable();
             $table->timestamp('answer_updated_at')->nullable();
             $table->boolean('anonymously')->default(false);
             $table->unsignedBigInteger('views')->default(0);
@@ -49,7 +49,7 @@ return new class extends Migration
             $table->timestamps();
         });
 
-        DB::statement('UPDATE questions SET answer_updated_at = updated_at WHERE answered_created_at < updated_at');
+        DB::statement('UPDATE questions SET answer_updated_at = updated_at WHERE answer_created_at < updated_at');
 
         Question::query()
             ->whereNull('parent_id')

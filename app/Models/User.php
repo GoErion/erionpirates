@@ -26,7 +26,15 @@ use Illuminate\Support\Str;
  * @property mixed $questionsReceived
  * @property mixed $questionsSent
  * @property mixed $username
+ * @property mixed $prefers_anonymous_questions
+ * @property mixed $id
+ * @property mixed $github_username
+ * @property mixed|null $email_verified_at
+ * @property mixed $is_uploaded_avatar
  * @method static whereIn(string $string, array $mentions)
+ * @method findOrFail(int|null $toId)
+ * @method static whereRaw(string $string, array $array)
+ * @method static create(array $array)
  */
 class User extends Authenticatable implements FilamentUser,MustVerifyEmail,Viewable
 {
@@ -42,6 +50,14 @@ class User extends Authenticatable implements FilamentUser,MustVerifyEmail,Viewa
         'password',
         'remember_token',
     ];
+
+    protected $fillable = [
+        'name',
+        'email',
+        'username',
+        'password',
+    ];
+
 
     public static function incrementViews(array $ids)
     : void

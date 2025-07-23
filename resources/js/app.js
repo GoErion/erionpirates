@@ -1,12 +1,11 @@
-import './bootstrap';
+import './bootstrap'
 import autosize from 'autosize';
-import notifications from  'alpinejs-notify';
-import Sortable from 'sortablejs';
-import {Livewire,Alpine} from '../../vendor/livewire/livewire/dist/livewire.esm.js';
+import notifications from 'alpinejs-notify'
+import Sortable from 'sortablejs'
+import { Livewire, Alpine } from '../../vendor/livewire/livewire/dist/livewire.esm'
 
-
-window.Alpine = Alpine;
-window.Sortable = Sortable;
+window.Alpine = Alpine
+window.Sortable = Sortable
 
 Alpine.plugin(notifications)
 
@@ -14,7 +13,7 @@ Alpine.magic('clipboard', () => {
     return subject => navigator.clipboard.writeText(subject)
 })
 
-Alpine.directives('sortable', (el) => {
+Alpine.directive('sortable', (el) => {
     el.sortable = Sortable.create(el, {
         draggable: '[x-sortable-item]',
         handle: '[x-sortable-handle]',
@@ -25,16 +24,16 @@ Alpine.directives('sortable', (el) => {
 })
 
 Alpine.directive('autosize', (el) => {
-    if (el){
+    if (el) {
         autosize(el);
     }
-})
+});
 
-import { shareProfile} from './share-profile';
-Alpine.data('shareProfile', shareProfile);
+import { shareProfile } from './share-profile.js'
+Alpine.data('shareProfile', shareProfile)
 
-import {copyUrl} from './copy-url';
-Alpine.data('copyUrl', copyUrl);
+import { copyUrl } from './copy-url.js'
+Alpine.data('copyUrl', copyUrl)
 
 import { showMore } from './show-more.js'
 Alpine.data('showMore', showMore)
@@ -70,4 +69,4 @@ Alpine.data('viewCreate', viewCreate);
 import { themeSwitch } from './theme-switch.js';
 Alpine.data('themeSwitch', themeSwitch);
 
-Livewire.start();
+Livewire.start()

@@ -30,6 +30,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
  * @property mixed $from_id
  * @method static findOrFail(string $questionId)
  * @method static where(string $string, string $questionId)
+ * @method static whereKey(string|null $parentId)
  */
 #[ObservedBy(QuestionObserver::class)]
 class Question extends Model implements Viewable

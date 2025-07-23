@@ -11,7 +11,7 @@
 {{--@endpersist--}}
 <div class="flex min-h-screen flex-col">
     <div class="mx-auto ml-3 mr-3 flex-grow">
-{{--        @include('layouts.navigation')--}}
+        @include('layouts.navigation')
         @if (isset($title))
             <div class="mb-6 mt-20 flex flex-col items-center sm:mb-12">
                 <div class="w-full max-w-md px-2 sm:px-0">
@@ -24,13 +24,13 @@
         <main class="mt-16">
             {{ $slot }}
         </main>
-{{--        <x-image-lightbox />--}}
+        <x-image-lightbox />
     </div>
 
-{{--    @persist('footer')--}}
-{{--    <x-back-to-top :offset="300" />--}}
-{{--    <x-footer />--}}
-{{--    @endpersist--}}
+    @persist('footer')
+    <x-back-to-top :offset="300" />
+    <x-footer />
+    @endpersist
 </div>
 @livewireScriptConfig
 
