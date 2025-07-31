@@ -5,6 +5,7 @@ declare(strict_types=1);
 use App\Http\Controllers\BookmarksController;
 use App\Http\Controllers\NotificationController;
 use App\Http\Controllers\UserController;
+use App\Http\Middleware\EnsureVerifiedEmailsForSignInUsers;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,9 +20,12 @@ Route::view('/users', 'home/users')->name('home.users');
 
 Route::prefix('/@{username}')->group(function () {
     Route::get('/', [UserController::class, 'show'])
-        ->name('profile.show');
-//        ->middleware(EnsureVerifiedEmailsForSignInUsers::class);
+        ->name('profile.show')
+        ->middleware(EnsureVerifiedEmailsForSignInUsers::class);
 
+//    Route::get('questions/{question}', [QuestionController::class, 'show'])
+//        ->name('questions.show')
+//        ->middleware(EnsureVerifiedEmailsForSignInUsers::class);
 });
 
 Route::group(['middleware' => ['auth']], function () {
